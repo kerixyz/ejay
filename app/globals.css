@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+/* ─── CSS custom properties ──────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAF7;
+  --foreground: #1C1C1A;
 }
 
+/* ─── Tailwind v4 theme extension ────────────────────────────────────────────── */
+/* Custom palette + DM Sans as the default sans stack.                            */
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-background:  var(--background);
+  --color-foreground:  var(--foreground);
+
+  /* Brand palette */
+  --color-cream:       #F5F0E8;
+  --color-beige:       #E8DFD0;
+  --color-terracotta:  #C4714A;
+  --color-warmblack:   #1C1C1A;
+  --color-softwhite:   #FAFAF7;
+
+  /* Fonts */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─── Base ────────────────────────────────────────────────────────────────────── */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ─── Keyframes ──────────────────────────────────────────────────────────────── */
+
+/* Hidden-object found animation */
+@keyframes wiggle {
+  0%, 100% { transform: scale(1)   rotate(0deg);   }
+  30%      { transform: scale(1.5) rotate(-15deg); }
+  70%      { transform: scale(1.3) rotate(12deg);  }
+}
+
+/* Award-unlock section reveal */
+@keyframes unlockReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Wrong-answer / toast fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Toast slide up */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Confetti piece fall — used by .confetti-piece */
+@keyframes confettiFall {
+  0%   { transform: translateY(-10px) rotate(0deg);   opacity: 1;   }
+  80%  { opacity: 0.6; }
+  100% { transform: translateY(110px) rotate(360deg); opacity: 0;   }
+}
+
+/* ─── Animation utility classes ──────────────────────────────────────────────── */
+
+.animate-wiggle  { animation: wiggle       0.35s ease-in-out; }
+.animate-unlock  { animation: unlockReveal 0.5s  ease-out both; }
+.animate-fadein  { animation: fadeIn       0.35s ease-out both; }
+.animate-slideup { animation: slideUp      0.4s  ease-out both; }
+
+/* Used by ConfettiBurst — duration/delay set via inline style per piece */
+.confetti-piece  { animation: confettiFall linear forwards; }
