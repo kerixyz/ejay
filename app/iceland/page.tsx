@@ -49,8 +49,9 @@ export default function IcelandPage() {
             A formal inquiry
           </p>
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-            Will you travel to<br />
-            <span className="text-sky-300">Iceland</span> with me?
+            Wanna hang out in <br />
+            <span className="text-sky-300">Iceland</span> with me? <br />
+            👉👈
           </h1>
         </div>
 
