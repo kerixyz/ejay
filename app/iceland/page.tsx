@@ -3,16 +3,10 @@
 import { useState, useRef, useCallback } from "react";
 
 const TERMS = [
-  "By clicking YES, you agree to brave freezing temperatures and pretend to enjoy it.",
-  "Participant acknowledges that the Northern Lights may or may not appear, and any disappointment shall be directed at the sky, not the trip organizer.",
-  "You consent to being photographed in front of waterfalls at least three (3) times per day.",
-  "All hot spring visits are mandatory. No exceptions. This is non-negotiable.",
-  "Participant waives the right to complain about the price of food in Reykjavik.",
-  "You agree to say 'wow' genuinely at least once per glacier.",
-  "The word 'cozy' is to be used in its correct Scandinavian-adjacent context only.",
-  "Both parties reserve the right to spontaneously pull over for a scenic photo.",
-  "Participant agrees that Iceland is, in fact, not that icy, and Greenland is, in fact, not that green.",
-  "This agreement is governed by the laws of adventure and good vibes.",
+  "i know you can't right now. i get it. no pressure.",
+  "but like... hypothetically. in the future. sometime oct–feb maybe.",
+  "hot springs. northern lights. good food. just saying.",
+  "think about it 👉👈",
 ];
 
 export default function IcelandPage() {
