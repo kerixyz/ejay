@@ -12,14 +12,6 @@ export default function Footer() {
           <div className="h-px flex-1 bg-petal/30" />
         </div>
 
-        {/* Kendo / sakura badge */}
-        <div className="inline-flex items-center gap-3 border border-crimson/25 bg-crimson/5 px-5 py-2.5 mb-8">
-          <span className="text-base">⚔️</span>
-          <span className="text-[10px] tracking-[0.28em] text-crimson uppercase font-semibold">
-            桜 · Sakura · 桜
-          </span>
-          <span className="text-base">🌸</span>
-        </div>
 
         {/* Big birthday message */}
         <p
@@ -48,7 +40,7 @@ export default function Footer() {
         <div className="flex items-center gap-3 mt-10">
           <div className="h-px flex-1 bg-petal/30" />
           <span className="text-[10px] tracking-[0.2em] text-warmblack/25 font-medium uppercase">
-            道 · the way
+            from your clingy friend
           </span>
           <div className="h-px flex-1 bg-petal/30" />
         </div>

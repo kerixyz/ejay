@@ -302,10 +302,11 @@ export default function AwardSection({ config, index }: Props) {
             </span>
             <div className="h-5 w-px bg-petal/30" />
             <span className="text-[11px] tracking-[0.25em] text-crimson uppercase font-semibold">
-              Award {String(index).padStart(2, "0")}
+              {/* Award {String(index).padStart(2, "0")} */}
+              {String(index).padStart(2, "0")}
             </span>
           </div>
-          <span className="text-xl" aria-hidden="true">{config.emoji}</span>
+          {/* <span className="text-xl" aria-hidden="true">{config.emoji}</span> */}
         </div>
 
         {unlocked ? (

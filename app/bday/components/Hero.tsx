@@ -35,7 +35,7 @@ export default function Hero() {
 
         {/* Kicker */}
         <p className="text-xs tracking-[0.25em] text-sage uppercase font-semibold mb-3">
-          presented in her honour
+          Happy Birthday Vulcaseal!
         </p>
 
         {/* Name */}
@@ -48,20 +48,9 @@ export default function Hero() {
 
         {/* Descriptor */}
         <p className="text-base font-normal text-warmblack/60 mb-8 max-w-md leading-relaxed">
-          Certificates, memories &amp; accolades — curated with love and
-          moderate editorial restraint.
+          Answer the questions below to unlock photos!
         </p>
 
-        {/* Kendo stamp badge */}
-        <div className="inline-flex items-center gap-3 border border-crimson/30 bg-crimson/5 px-4 py-2.5 mb-10">
-          <span className="text-lg">⚔️</span>
-          <div className="h-4 w-px bg-crimson/20" />
-          <span className="text-[11px] tracking-[0.22em] text-crimson font-semibold uppercase">
-            道場 · Dojo
-          </span>
-          <div className="h-4 w-px bg-crimson/20" />
-          <span className="text-lg">🌸</span>
-        </div>
 
         {/* Bottom rule */}
         <div className="flex items-center gap-3">
