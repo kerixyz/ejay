@@ -1,53 +1,77 @@
-// Hero — magazine-cover opener.
-// Large editorial type, thin rules, sparse terracotta accents.
+"use client";
+
+import SakuraPetals from "./SakuraPetals";
 
 export default function Hero() {
   return (
-    <section className="px-6 md:px-12 lg:px-24 pt-16 pb-14 border-b border-beige">
-      <div className="max-w-3xl mx-auto">
+    <section className="relative px-6 md:px-12 lg:px-24 pt-16 pb-14 border-b-2 border-sakura overflow-hidden bg-softwhite">
 
-        {/* Top rule with centred stamp */}
-        <div className="flex items-center gap-5 mb-14">
-          <div className="h-px flex-1 bg-beige" />
-          <span className="text-[10px] tracking-[0.3em] text-terracotta uppercase font-light">
-            a birthday collection
-          </span>
-          <div className="h-px flex-1 bg-beige" />
+      {/* Falling petals */}
+      <SakuraPetals />
+
+      {/* "桜" kanji watermark */}
+      <div
+        className="absolute right-4 top-4 leading-none select-none pointer-events-none font-bold text-sakura"
+        style={{ fontSize: "clamp(8rem, 30vw, 18rem)", opacity: 0.18 }}
+        aria-hidden="true"
+      >
+        桜
+      </div>
+
+      <div className="max-w-3xl mx-auto relative z-10">
+
+        {/* Top ornamental rule */}
+        <div className="flex items-center gap-4 mb-12">
+          <div className="h-px flex-1 bg-petal/40" />
+          <div className="flex items-center gap-2">
+            <span className="text-petal text-xs">✿</span>
+            <span className="text-[11px] tracking-[0.3em] text-crimson uppercase font-semibold">
+              a birthday collection
+            </span>
+            <span className="text-petal text-xs">✿</span>
+          </div>
+          <div className="h-px flex-1 bg-petal/40" />
         </div>
 
         {/* Kicker */}
-        <p className="text-[11px] tracking-[0.28em] text-terracotta uppercase font-light mb-3">
+        <p className="text-xs tracking-[0.25em] text-sage uppercase font-semibold mb-3">
           presented in her honour
         </p>
 
-        {/* Name — the main event */}
+        {/* Name */}
         <h1
-          className="font-light text-warmblack leading-none mb-4"
-          style={{ fontSize: "clamp(4rem, 14vw, 8rem)", letterSpacing: "-0.02em" }}
+          className="font-bold text-warmblack leading-none mb-5"
+          style={{ fontSize: "clamp(3.5rem, 14vw, 8rem)", letterSpacing: "-0.02em" }}
         >
           Ejay
         </h1>
 
-        {/* Descriptor line */}
-        <p className="text-base font-light text-warmblack/50 mb-8 max-w-md leading-relaxed">
+        {/* Descriptor */}
+        <p className="text-base font-normal text-warmblack/60 mb-8 max-w-md leading-relaxed">
           Certificates, memories &amp; accolades — curated with love and
           moderate editorial restraint.
         </p>
 
-        {/* Terracotta lemon stamp */}
-        <div
-          className="inline-flex items-center justify-center w-8 h-8 border border-terracotta/50 text-sm mb-10"
-          aria-hidden="true"
-        >
-          🍋
+        {/* Kendo stamp badge */}
+        <div className="inline-flex items-center gap-3 border border-crimson/30 bg-crimson/5 px-4 py-2.5 mb-10">
+          <span className="text-lg">⚔️</span>
+          <div className="h-4 w-px bg-crimson/20" />
+          <span className="text-[11px] tracking-[0.22em] text-crimson font-semibold uppercase">
+            道場 · Dojo
+          </span>
+          <div className="h-4 w-px bg-crimson/20" />
+          <span className="text-lg">🌸</span>
         </div>
 
         {/* Bottom rule */}
-        <div className="h-px bg-beige" />
+        <div className="flex items-center gap-3">
+          <div className="h-px flex-1 bg-petal/40" />
+          <span className="text-petal text-[10px]">✿</span>
+          <div className="h-px flex-1 bg-petal/40" />
+        </div>
 
-        {/* Footnote */}
-        <p className="mt-4 text-[10px] tracking-[0.2em] text-warmblack/25 font-light uppercase">
-          scroll to unlock awards · tap to discover hidden items
+        <p className="mt-4 text-[11px] tracking-[0.18em] text-warmblack/30 font-medium uppercase">
+          scroll to unlock awards
         </p>
 
       </div>

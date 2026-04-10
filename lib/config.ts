@@ -1,115 +1,142 @@
 // ─── Award / Quiz configuration ───────────────────────────────────────────────
-// Edit this file to update all quiz questions, options and award copy.
-// correctIndex is zero-based (0 = first option).
+
+export interface PhotoSlot {
+  src: string;   // e.g. "/bday/ejay-smile-1.jpg"
+  alt: string;
+  caption?: string;
+}
 
 export interface AwardConfig {
   id: string;
   emoji: string;
   award: string;
-  question: string;      // TODO: swap placeholders below for real inside-joke questions
-  options: string[];     // always 4 items; one must be "Ejay"
-  correctIndex: number;
-  wrongMessage: string;
+  type: "quiz" | "checklist";
+  // up to 6 photos shown in the polaroid grid after unlocking
+  photos?: PhotoSlot[];
+  // quiz fields
+  question?: string;
+  options?: string[];
+  correctIndex?: number;
+  wrongMessage?: string;
+  // checklist fields
+  checklistPrompt?: string;
+  checklistItems?: string[];
 }
 
 export const QUIZ_CONFIG: AwardConfig[] = [
   {
-    id: "smile",
-    emoji: "🏆",
-    award: "Most Beautiful Smile",
-    // TODO: replace with a real question
-    question: "Who has the most beautiful smile in the world?",
+    id: "beautiful",
+    emoji: "🌸",
+    award: "Most Beautiful Girl",
+    type: "quiz",
+    question: "Who is the most beautiful girl in the world?",
     options: [
       "Not Ejay",
       "Definitely not Ejay",
-      "Ejay",
       "Still not Ejay",
-    ],
-    correctIndex: 2,
-    wrongMessage: "Incorrect. Embarrassing, really.",
-  },
-  {
-    id: "beautiful",
-    emoji: "👑",
-    award: "Most Beautiful Girl",
-    // TODO: replace with a real question
-    question: "Who is the most beautiful girl in any room she walks into?",
-    options: [
-      "Not Ejay",
-      "Ejay",
-      "Also not Ejay",
-      "Nope, not Ejay either",
-    ],
-    correctIndex: 1,
-    wrongMessage: "Wrong. Please reconsider your life choices.",
-  },
-  {
-    id: "hardworking",
-    emoji: "💪",
-    award: "Hardest Working",
-    // TODO: replace with a real question
-    question:
-      "Who works the night shift, shows up the next day with a full face of energy, and somehow still has plans?",
-    options: [
-      "Someone else",
-      "Not Ejay",
-      "Certainly not Ejay",
       "Ejay",
     ],
     correctIndex: 3,
-    wrongMessage: "Sadly no. Try again.",
-  },
-  {
-    id: "kendo",
-    emoji: "⚔️",
-    award: "Craziest Kendoka",
-    // TODO: replace with a real question
-    question:
-      "Who practices kendo with a level of dedication that is frankly a little alarming?",
-    options: [
-      "Ejay",
-      "Not Ejay",
-      "Not Ejay at all",
-      "Certainly not Ejay",
+    wrongMessage: "Incorrect. Embarrassing, really.",
+    photos: [
+      { src: "/bday/beautiful-1.jpg", alt: "Ejay", caption: "always" },
+      { src: "/bday/beautiful-2.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/beautiful-3.jpg", alt: "Ejay", caption: "" },
+      // { src: "/bday/beautiful-4.jpg", alt: "Ejay", caption: "" },
+      // { src: "/bday/beautiful-5.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/beautiful-6.jpg", alt: "Ejay", caption: "" },
     ],
-    correctIndex: 0,
-    wrongMessage: "Incorrect. Borderline offensive.",
   },
   {
-    id: "suburi",
-    emoji: "🌅",
-    award: "Best Daily Suburi Person",
-    // TODO: replace with a real question
-    question: "Who is out there doing suburi before the sun has fully committed to rising?",
+    id: "nurse",
+    emoji: "🐾",
+    award: "Best Nurse & Pet Taker",
+    type: "quiz",
+    question: "Who would drop everything to nurse a sick pet back to health at 3am?",
     options: [
-      "Not Ejay",
-      "Still not Ejay",
+      "A stranger",
+      "No one, she'd be asleep",
       "Ejay",
-      "Definitely not Ejay",
+      "Her pets",
     ],
     correctIndex: 2,
-    wrongMessage: "No. Just… no.",
+    wrongMessage: "Wrong. She would absolutely be up at 3am for them.",
+    photos: [
+      // Drop pet photos here — up to 6
+      { src: "/bday/nurse-1.jpg", alt: "Ejay's pet", caption: "" },
+      { src: "/bday/nurse-2.jpg", alt: "Ejay's pet", caption: "" },
+      { src: "/bday/nurse-3.jpg", alt: "Ejay's pet", caption: "" },
+      { src: "/bday/nurse-4.jpg", alt: "Ejay's pet", caption: "" },
+      // { src: "/bday/pets-5.jpg", alt: "Ejay's pet", caption: "" },
+      // { src: "/bday/pets-6.jpg", alt: "Ejay's pet", caption: "" },
+    ],
   },
-];
-
-// ─── Hidden object game ────────────────────────────────────────────────────────
-// 10 emoji stamps scattered across the page.
-// Positions are set in app/bday/page.tsx.
-
-export interface HiddenItemConfig {
-  id: number;
-  emoji: string;
-}
-
-export const HIDDEN_ITEMS: HiddenItemConfig[] = [
-  { id: 0, emoji: "🐱" },
-  { id: 1, emoji: "🍋" },
-  { id: 2, emoji: "🐶" },
-  { id: 3, emoji: "🍫" },
-  { id: 4, emoji: "✈️" },
-  { id: 5, emoji: "🍕" },
-  { id: 6, emoji: "🥋" },
-  { id: 7, emoji: "💉" },
-  { id: 8, emoji: "🍰" },
-  { id: 9, emoji: "☀️" },
+  {
+    id: "model",
+    emoji: "✨",
+    award: "Best Model",
+    type: "quiz",
+    question: "Who could walk into a photoshoot having just woken up and still outshine everyone?",
+    options: [
+      "Someone who prepared",
+      "Ejay",
+      "A professional",
+      "Not Ejay",
+    ],
+    correctIndex: 1,
+    wrongMessage: "No. Please reconsider.",
+    photos: [
+      { src: "/bday/model-1.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/model-2.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/model-3.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/model-4.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/model-5.jpg", alt: "Ejay", caption: "" },
+      { src: "/bday/model-6.jpg", alt: "Ejay", caption: "" },
+    ],
+  },
+  {
+    id: "snacker",
+    emoji: "🍫",
+    award: "Best Snacker",
+    type: "checklist",
+    checklistPrompt: "Check off Ejay's essential snack lineup:",
+    checklistItems: [
+      "Snickers",
+      "Ferrero Rocher",
+      "Coca-Cola",
+      "Minecraft",
+    ],
+    photos: [
+      // Snack / game themed photos
+      { src: "/bday/snacker-1.jpg", alt: "snacks", caption: "" },
+      { src: "/bday/snacker-2.jpg", alt: "snacks", caption: "" },
+      { src: "/bday/snacker-3.jpg", alt: "snacks", caption: "" },
+      { src: "/bday/snacker-4.jpg", alt: "snacks", caption: "" },
+      { src: "/bday/snacker-5.jpg", alt: "snacks", caption: "" },
+      { src: "/bday/snacker-6.jpg", alt: "snacks", caption: "" },
+    ],
+  },
+  {
+    id: "smile",
+    emoji: "🌿",
+    award: "Best Smile Ever",
+    type: "quiz",
+    question: "Whose smile is responsible for improving the mood of everyone in a 10-metre radius?",
+    options: [
+      "Nobody's",
+      "Ejay's",
+      "A dog's",
+      "The sun's",
+    ],
+    correctIndex: 1,
+    wrongMessage: "Incorrect. Science agrees it's Ejay.",
+    photos: [
+      { src: "/bday/smile-1.jpg", alt: "Ejay smiling", caption: "" },
+      { src: "/bday/smile-2.jpg", alt: "Ejay smiling", caption: "" },
+      // { src: "/bday/smile-3.jpg", alt: "Ejay smiling", caption: "" },
+      // { src: "/bday/smile-4.jpg", alt: "Ejay smiling", caption: "" },
+      // { src: "/bday/smile-5.jpg", alt: "Ejay smiling", caption: "" },
+      // { src: "/bday/smile-6.jpg", alt: "Ejay smiling", caption: "" },
+    ],
+  },
 ];
