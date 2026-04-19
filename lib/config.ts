@@ -99,12 +99,12 @@ export const QUIZ_CONFIG: AwardConfig[] = [
     emoji: "🍫",
     award: "Best Snacker",
     type: "checklist",
-    checklistPrompt: "Check off Ejay's essential snack lineup:",
+    checklistPrompt: "What is ejay's favorite drink",
     checklistItems: [
-      "Snickers",
-      "Ferrero Rocher",
+      "Coca-cola",
+      "Coca-cola",
       "Coca-Cola",
-      "Minecraft",
+      "Coca-cola",
     ],
     photos: [
       // Snack / game themed photos
@@ -125,7 +125,6 @@ export const QUIZ_CONFIG: AwardConfig[] = [
     options: [
       "Nobody's",
       "Ejay's",
-      "A dog's",
       "The sun's",
     ],
     correctIndex: 1,
@@ -133,10 +132,10 @@ export const QUIZ_CONFIG: AwardConfig[] = [
     photos: [
       { src: "/bday/smile-1.jpg", alt: "Ejay smiling", caption: "" },
       { src: "/bday/smile-2.jpg", alt: "Ejay smiling", caption: "" },
-      // { src: "/bday/smile-3.jpg", alt: "Ejay smiling", caption: "" },
-      // { src: "/bday/smile-4.jpg", alt: "Ejay smiling", caption: "" },
-      // { src: "/bday/smile-5.jpg", alt: "Ejay smiling", caption: "" },
-      // { src: "/bday/smile-6.jpg", alt: "Ejay smiling", caption: "" },
+      { src: "/bday/smile-3.jpg", alt: "Ejay smiling", caption: "" },
+      { src: "/bday/smile-4.jpg", alt: "Ejay smiling", caption: "" },
+      { src: "/bday/smile-5.jpg", alt: "Ejay smiling", caption: "" },
+      { src: "/bday/smile-6.jpg", alt: "Ejay smiling", caption: "" },
     ],
   },
 ];
