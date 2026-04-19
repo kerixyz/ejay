@@ -67,8 +67,8 @@ export const QUIZ_CONFIG: AwardConfig[] = [
       { src: "/bday/nurse-2.jpg", alt: "Ejay's pet", caption: "" },
       { src: "/bday/nurse-3.jpg", alt: "Ejay's pet", caption: "" },
       { src: "/bday/nurse-4.jpg", alt: "Ejay's pet", caption: "" },
-      // { src: "/bday/pets-5.jpg", alt: "Ejay's pet", caption: "" },
-      // { src: "/bday/pets-6.jpg", alt: "Ejay's pet", caption: "" },
+      { src: "/bday/nurse-5.jpg", alt: "Ejay's pet", caption: "" },
+      { src: "/bday/nurse-6.jpg", alt: "Ejay's pet", caption: "" },
     ],
   },
   {
